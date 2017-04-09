@@ -19,8 +19,8 @@ extension ReflectableEnum {
 }
 
 enum Contact: ReflectableEnum {
-    case addressBookContact(AddressBookContact)
-    case faceBookContact(FaceBookContact)
+    case addressBook(AddressBookContact)
+    case faceBook(FaceBookContact)
     
     var id:   String { return value(of: #function) }
     var name: String { return value(of: #function) }
@@ -48,7 +48,7 @@ let tom = FaceBookContact(
     name: "Tom",
     username: "tommyboy")
 
-let contacts = [Contact.addressBookContact(bob),
-                Contact.faceBookContact(tom)]
+let contacts = [Contact.addressBook(bob),
+                Contact.faceBook(tom)]
 
 contacts.forEach { print($0.id + " " + $0.name) }
